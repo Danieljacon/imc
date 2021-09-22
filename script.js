@@ -10,7 +10,6 @@ function calcImc(cancela) {
   const imcResult = form.querySelector("#imc-result");
 
   const imc = Math.round(peso.value / (altura.value * altura.value));
-  resultado.innerHTML = `IMC: ${imc}`;
   if (imc <= 18.5) {
     resultado.innerHTML = ` Você está abaixo do peso`;
     removeClasse();
@@ -28,7 +27,7 @@ function calcImc(cancela) {
     removeClasse();
     addNewClass("sob2");
   } else if (imc >= 40) {
-    resultado.innerHTML = `[IMC: ${imc} ] Obesidade mórbida`;
+    resultado.innerHTML = `Obesidade mórbida`;
     removeClasse();
     addNewClass("sob3");
   } else {
