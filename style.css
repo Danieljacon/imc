@@ -62,11 +62,13 @@
   text-align: center;
 }
 #imc-result {
-  padding: var(--padding-padrao);
-  margin-bottom: 5px;
-  border: none;
-  border-radius: var(--border-r-padrao);
-  cursor: not-allowed;
+  padding: 3.5%;
+  width: 150px;
+  height: 50px;
+  margin-bottom: 35px;
+  text-align: center;
+  border-bottom-left-radius: var(--border-r-padrao);
+  border-bottom-right-radius: var(--border-r-padrao);
   background-color: var(--black-color);
   color: var(--white-color);
   transition: var(--trans-padrao);
@@ -123,7 +125,7 @@
   padding: var(--padding-padrao);
   border: 2px solid var(--black-color);
   border-radius: var(--border-r-padrao);
-  margin-bottom: 10px;
+
 }
 
 .imc-table,
