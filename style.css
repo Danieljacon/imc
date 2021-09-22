@@ -1,6 +1,9 @@
 :root {
   --black-color: rgb(68, 67, 67);
   --white-color: rgb(255, 255, 255);
+  --trans-padrao: 0.2s ease;
+  --border-r-padrao: 10px;
+  --padding-padrao: 10px;
 }
 
 * {
@@ -9,7 +12,6 @@
   box-sizing: border-box;
   font-family: sans-serif;
   font-weight: 600;
-  transition: 0.2s ease;
   font-size: 20px;
 }
 .all {
@@ -22,9 +24,9 @@
 
 .box {
   background-color: var(--white-color);
-  height: 80vh;
+  height: 100vh;
   width: 40%;
-  border-radius: 10px;
+  border-radius: var(--border-r-padrao);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,37 +40,45 @@
   flex-direction: column;
   width: 50%;
   color: var(--black-color);
-  font-size: 1.5rem;
 }
 
 .global {
   margin-bottom: 20px;
-  padding: 10px;
+  padding: var(--padding-padrao);
   border: none;
-  transition: 0.5s ease;
+  transition: var(--trans-padrao);
   -webkit-appearance: none;
 }
 
-#resultado {
-  margin-top: 10px;
+#result {
   display: flex;
-  width: 100%;
-  white-space:pre-line;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-
-  padding: 10px;
+  padding: var(--padding-padrao);
 }
-#calcular {
-  padding: 10px;
+#resultado {
+  margin-top: 5px;
+  text-align: center;
+}
+#imc-result {
+  padding: var(--padding-padrao);
   margin-bottom: 5px;
   border: none;
-  border-radius: 10px;
+  border-radius: var(--border-r-padrao);
+  cursor: not-allowed;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  transition: var(--trans-padrao);
+}
+#calcular {
+  padding: var(--padding-padrao);
+  margin-bottom: 5px;
+  border: none;
+  border-radius: var(--border-r-padrao);
   cursor: pointer;
   background-color: var(--black-color);
   color: var(--white-color);
-  transition: 0.5s ease;
+  transition: var(--trans-padrao);
 }
 #calcular:hover {
   padding: 20px;
@@ -80,7 +90,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  transition: 0.2s ease;
+  transition: var(--trans-padrao);
 }
 
 .form_box:hover {
@@ -89,7 +99,7 @@
   color: var(--white-color);
   border: 1px solid;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: var(--border-r-padrao);
 }
 
 .global:focus {
@@ -99,28 +109,77 @@
   color: var(--white-color);
   border: 1px solid;
   padding: 15px;
-  border-radius: 10px;
-  transition: 0.2s ease;
+  border-radius: var(--border-r-padrao);
+  transition: var(--trans-padrao);
 }
 
+/* TABELA */
+.tabela {
+  display: grid;
+  width: 180%;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  padding: var(--padding-padrao);
+  border: 2px solid var(--black-color);
+  border-radius: var(--border-r-padrao);
+  margin-bottom: 10px;
+}
 
+.imc-table,
+.class-table {
+  display: flex;
+  flex-direction: column;
+}
 
+.imc-table li,
+.class-table li {
+  font-size: 0.7rem;
+  list-style: none;
+}
+
+.imc-table span,
+.class-table span {
+  padding: 5px;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  margin-bottom: 5px;
+}
+.imc-table span {
+  border-top-left-radius: var(--border-r-padrao);
+  border-bottom-left-radius: var(--border-r-padrao);
+}
+
+.class-table span {
+  border-top-right-radius: var(--border-r-padrao);
+  border-bottom-right-radius: var(--border-r-padrao);
+}
+/* TABELA FIM */
+
+/* MUDAR COR AO CALCULAR IMC */
+.changeColor {
+  color: var(--white-color);
+  background-color: var(--black-color);
+  border-radius: var(--border-r-padrao);
+  transition: 0.5s ease;
+}
+/* MUDAR COR FIM */
 #peso,
-#altura,#hora {
+#altura,
+#hora {
   text-align: center;
 }
 
 @media (max-width: 768px) {
-    .box {
-        background-color: var(--white-color);
-        height: 80vh;
-        width: 90%;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      * {
-          font-size: 20px;
-      }
+  .box {
+    background-color: var(--white-color);
+    height: 95vh;
+    width: 90%;
+    border-radius: var(--border-r-padrao);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  * {
+    font-size: 20px;
+  }
 }

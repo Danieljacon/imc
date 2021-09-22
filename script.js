@@ -7,23 +7,58 @@ function calcImc(cancela) {
   const peso = form.querySelector("#peso");
   const altura = form.querySelector("#altura");
   const resultado = form.querySelector("#resultado");
-  horario();
+  const imcResult = form.querySelector("#imc-result");
 
-  const imc = peso.value / (altura.value * altura.value);
+  const imc = Math.round(peso.value / (altura.value * altura.value));
+  resultado.innerHTML = `IMC: ${imc}`;
   if (imc <= 18.5) {
-    resultado.innerHTML = `[IMC: ${imc}] \n Você está abaixo do peso`;
+    resultado.innerHTML = ` Você está abaixo do peso`;
+    removeClasse();
+    addNewClass("mag");
+
   } else if (imc >= 18.6 && imc <= 24.9) {
-    resultado.innerHTML = `[IMC: ${imc}] \n Você está com peso normal`;
+    resultado.innerHTML = ` Você está com peso normal`;
+    removeClasse();
+    addNewClass("nor");
+
   } else if (imc >= 25 && imc <= 29.9) {
-    resultado.innerHTML = `[IMC: ${imc}] \n Você está com sobrepeso`;
-  } else if (imc >= 30 && imc <= 34.9) {
-    resultado.innerHTML = `[IMC: ${imc}] \n Obesidade grau 1`;
-  } else if (imc >= 35 && imc <= 39.9) {
-    resultado.innerHTML = `[IMC: ${imc}] \n Obesidade grau 1`;
+    resultado.innerHTML = ` Você está com sobrepeso`;
+    removeClasse();
+    addNewClass("sob1");
+
+  } else if (imc >= 30 && imc <= 39.9) {
+    resultado.innerHTML = ` Obesidade grau 1`;
+    removeClasse();
+    addNewClass("sob2");
+
   } else if (imc >= 40) {
-    resultado.innerHTML = `[IMC: ${imc}] \n Obesidade mórbida`;
+    resultado.innerHTML = `[IMC: ${imc} ] Obesidade mórbida`;
+    removeClasse();
+    addNewClass("sob3");
+
   } else {
     resultado.innerHTML = `Você precisa selecionar um valor`;
+    removeClasse();
   }
   // IMC
+  imcResult.innerHTML = `IMC: ${imc}`;
+}
+
+function removeClasse() {
+  let magreza = document.getElementById("mag");
+  let normal = document.getElementById("nor");
+  let obs1 = document.getElementById("sob1");
+  let obs2 = document.getElementById("sob2");
+  let obs3 = document.getElementById("sob3");
+
+  magreza.classList.remove("changeColor");
+  normal.classList.remove("changeColor");
+  obs1.classList.remove("changeColor");
+  obs2.classList.remove("changeColor");
+  obs3.classList.remove("changeColor");
+}
+
+function addNewClass(idTag) {
+  let catchId = document.getElementById(idTag);
+  return catchId.classList.add("changeColor");
 }

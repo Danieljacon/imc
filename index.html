@@ -13,24 +13,48 @@
     <div class="all">
         <div class="box">
             <form id="form" action="">
-                <label class="form_box" for="peso">Peso
-                    <input type="text" name="peso" autocomplete="off" class="global" id="peso"
-                        placeholder="Digite seu peso">
-                </label>
-                <label class="form_box" for="altura">Altura
-                    <input type="text" name="altura" autocomplete="off" class="global" id="altura"
-                        placeholder="Digite sua altura">
-                </label>
-                <label id="resultado">
-                    <label id="resultImc"></label>
-                </label>
-                <input type="submit" id="calcular" value="CALCULAR">
-                <label id="hora" for=""></label>
+                <div class="tabela">
+                    <ul class="imc-table"> <span>IMC</span> 
+                        <li>MENOR QUE 18,5</li>
+                        <li>ENTRE 18,5 E 24,9</li>
+                        <li>ENTRE 25,0 E 29,9</li>
+                        <li>ENTRE 30,0 E 39,9</li>
+                        <li>MAIOR QUE 40,0</li>
+                    </ul>
+                    <ul class="class-table"> <span>Classificação</span>
+                        <li id="mag">MAGREZA</li>
+                        <li id="nor">NORMAL</li>
+                        <li id="sob1">SOBREPESO</li>
+                        <li id="sob2">OBESIDADE</li>
+                        <li id="sob3">OBESIDADE GRAVE</li>
+                    </ul>
+                </div>
+                <div id="tabelaImc">
+
+                </div>
+                <form action="">
+                    <label class="form_box" for="peso">Peso
+                        <input type="text" name="peso" autocomplete="off" class="global" id="peso"
+                            placeholder="Digite seu peso">
+                    </label>
+                    <label class="form_box" for="altura">Altura
+                        <input type="text" name="altura" autocomplete="off" class="global" id="altura"
+                            placeholder="Digite sua altura">
+                    </label>
+                    <div id="result">
+                        <span id="imc-result"></span>
+                        <span id="resultado"></span>
+                    </div>
+                    <input type="submit" id="calcular" value="CALCULAR">
+                    <label id="hora" for=""></label>
+                </form>
             </form>
         </div>
     </div>
+
+
+
     <script src="script.js"></script>
-    <div>teste</div>
 </body>
 
 </html>
